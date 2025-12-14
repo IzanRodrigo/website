@@ -1,0 +1,29 @@
+title: Izan Rodrigo
+description: Software Developer
+url: 'https://izantech.app'
+baseurl: ''
+
+github_username: IzanRodrigo
+twitter_username: izanrmm
+linkedin_username: izanrodrigomorenomaroto
+email: izan.rmm@gmail.com
+
+# Feature flags
+show_status_indicator: false
+
+markdown: kramdown
+highlighter: rouge
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - CLAUDE.md
+  - README.md
+  - vendor
+  - node_modules
+  - package.json
+  - package-lock.json
+  - .pa11yci.json
+
+plugins:
+  - jekyll-seo-tag

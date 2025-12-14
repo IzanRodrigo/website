@@ -1,0 +1,16 @@
+# English translations
+hero_intro: 'Hello, World! My name is'
+section_about: '/about'
+section_projects: '/open-source'
+about_text: "I'm a Spanish software developer with over 10 years of experience building Android apps. I'm also passionate about building tools that improve the developer experience. I enjoy working with Kotlin and Jetpack Compose. Recently started building apps with TypeScript, and exploring compiler internals."
+project_autobuilder_desc: 'Kotlin symbol processor that generates builder classes from annotated interfaces. A type-safe alternative to data classes without binary compatibility concerns.'
+project_scrcpy_desc: "VS Code extension that integrates Genimotion's library <b>scrcpy</b> and brings Android device mirroring directly into your editor. View and control your Android devices with real-time screen streaming."
+skip_link: 'Skip to main content'
+contact: 'Contact'
+tooltip_github: 'Open the GitHub profile in a new tab'
+tooltip_language: 'Change language'
+tooltip_contact: 'Contact by email'
+tooltip_project_autobuilder: 'Open auto-builder in a new tab'
+tooltip_project_scrcpy: 'Open scrcpy-vscode in a new tab'
+status_available: 'Available for work'
+footer_made_with: 'Made with'

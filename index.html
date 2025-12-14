@@ -1,0 +1,152 @@
+---
+layout: default
+title: Home
+---
+
+<section class="hero animate-fade-in-up">
+  <p class="hero-intro"><span class="typewriter"></span><span class="typewriter-cursor"></span></p>
+  <h1>Izan</h1>
+  {% if site.show_status_indicator %}
+  <div class="status-indicator">
+    <span class="status-dot"></span>
+    <span data-i18n="status_available">{{ site.data.i18n.en.status_available }}</span>
+  </div>
+  {% endif %}
+</section>
+
+<section class="section animate-fade-in-up animate-delay-1">
+  <header class="section-header">
+    <h2 data-i18n="section_about">{{ site.data.i18n.en.section_about }}</h2>
+  </header>
+  <div class="glass-card about-content">
+    <img
+      src="https://github.com/{{ site.github_username }}.png"
+      alt="{{ site.title }}"
+      class="about-avatar"
+    />
+    <div class="about-text">
+      <p data-i18n="about_text">{{ site.data.i18n.en.about_text }}</p>
+    </div>
+  </div>
+  <div class="social-links animate-fade-in-up animate-delay-2">
+    <a
+      href="https://github.com/{{ site.github_username }}"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="social-link"
+      title="GitHub"
+      aria-label="GitHub"
+    >
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path
+          d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+        />
+      </svg>
+    </a>
+    <a
+      href="https://twitter.com/{{ site.twitter_username }}"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="social-link"
+      title="X (Twitter)"
+      aria-label="X (Twitter)"
+    >
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path
+          d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+        />
+      </svg>
+    </a>
+    <a
+      href="https://linkedin.com/in/{{ site.linkedin_username }}"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="social-link"
+      title="LinkedIn"
+      aria-label="LinkedIn"
+    >
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path
+          d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+        />
+      </svg>
+    </a>
+    <a href="mailto:{{ site.email }}" class="social-link" title="Email" aria-label="Email">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path
+          d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"
+        />
+        <path
+          d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"
+        />
+      </svg>
+    </a>
+  </div>
+</section>
+
+<section class="section animate-fade-in-up animate-delay-3">
+  <header class="section-header">
+    <h2 data-i18n="section_projects">{{ site.data.i18n.en.section_projects }}</h2>
+  </header>
+  <div class="projects">
+    <article class="glass-card project-card animate-fade-in-up animate-delay-4">
+      <div class="project-header">
+        <h3>
+          <a
+            href="https://github.com/IzanRodrigo/auto-builder"
+            target="_blank"
+            rel="noopener"
+            title="{{ site.data.i18n.en.tooltip_project_autobuilder }}"
+            aria-label="{{ site.data.i18n.en.tooltip_project_autobuilder }}"
+            data-i18n-a11y="tooltip_project_autobuilder"
+            >auto-builder</a
+          >
+        </h3>
+        <svg class="project-lang-icon" viewBox="0 0 128 128" aria-label="Kotlin">
+          <linearGradient id="kotlin-grad" x1="0%" y1="50%" x2="100%" y2="50%">
+            <stop offset="0%" stop-color="#E44857" />
+            <stop offset="100%" stop-color="#C711E1" />
+          </linearGradient>
+          <path
+            fill="url(#kotlin-grad)"
+            d="M0 0h65.4L0 64.4V0zM0 128 128 0H64.6L0 63.7V128zM128 128 64.6 63.7 0 128h128z"
+          />
+        </svg>
+      </div>
+      <p data-i18n="project_autobuilder_desc">{{ site.data.i18n.en.project_autobuilder_desc }}</p>
+      <div class="project-tags">
+        <span class="tag">Kotlin</span>
+        <span class="tag">KSP</span>
+        <span class="tag">Code Generation</span>
+      </div>
+    </article>
+
+    <article class="glass-card project-card animate-fade-in-up animate-delay-5">
+      <div class="project-header">
+        <h3>
+          <a
+            href="https://github.com/IzanRodrigo/scrcpy-vscode"
+            target="_blank"
+            rel="noopener"
+            title="{{ site.data.i18n.en.tooltip_project_scrcpy }}"
+            aria-label="{{ site.data.i18n.en.tooltip_project_scrcpy }}"
+            data-i18n-a11y="tooltip_project_scrcpy"
+            >scrcpy-vscode</a
+          >
+        </h3>
+        <svg class="project-lang-icon" viewBox="0 0 128 128" aria-label="TypeScript">
+          <path
+            fill="#3178C6"
+            d="M2 63.91v62.5h125v-125H2zm100.73-5a15.56 15.56 0 017.82 4.5 20.58 20.58 0 013 4c0 .16-5.4 3.81-8.69 5.85-.12.08-.6-.44-1.13-1.23a7.09 7.09 0 00-5.87-3.53c-3.79-.26-6.23 1.73-6.21 5a4.58 4.58 0 00.54 2.34c.83 1.73 2.38 2.76 7.24 4.86 8.95 3.85 12.78 6.39 15.16 10 2.66 4 3.25 10.46 1.45 15.24-2 5.2-6.9 8.73-13.83 9.9a38.32 38.32 0 01-9.52-.1 23.16 23.16 0 01-12.72-6.63c-1.15-1.27-3.39-4.58-3.25-4.82a9.34 9.34 0 011.15-.73L82 101l3.59-2.08.75 1.11a16.78 16.78 0 004.74 4.54c4 2.1 9.46 1.81 12.16-.62a5.43 5.43 0 00.69-6.92c-1-1.39-3-2.56-8.59-5-6.45-2.78-9.23-4.5-11.77-7.24a16.48 16.48 0 01-3.43-6.25 25 25 0 01-.22-8c1.33-6.23 6-10.58 12.82-11.87a31.66 31.66 0 019.49.26zm-29.34 5.24v5.12H57.16v46.23H45.65V69.26H29.38v-5a49.19 49.19 0 01.14-5.16c.06-.08 10-.12 22-.1h21.81z"
+          />
+        </svg>
+      </div>
+      <p data-i18n="project_scrcpy_desc">{{ site.data.i18n.en.project_scrcpy_desc }}</p>
+      <div class="project-tags">
+        <span class="tag">TypeScript</span>
+        <span class="tag">VS Code</span>
+        <span class="tag">Android</span>
+      </div>
+    </article>
+  </div>
+</section>
