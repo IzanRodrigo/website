@@ -18,8 +18,15 @@ highlighter: rouge
 exclude:
   - Gemfile
   - Gemfile.lock
+  - AGENTS.md
   - CLAUDE.md
+  - CODEX.md
+  - COPILOT.md
+  - GEMINI.md
   - README.md
+  - LICENSE
+  - eslint.config.js
+  - stylelint.config.js
   - vendor
   - node_modules
   - package.json

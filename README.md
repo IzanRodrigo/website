@@ -1,6 +1,6 @@
 # izantech.app
 
-Personal website built with Jekyll and hosted on GitHub Pages.
+Personal website built with Jekyll and hosted on Cloudflare Pages, with deployments orchestrated by GitHub Actions.
 
 ## Features
 

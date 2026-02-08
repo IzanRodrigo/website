@@ -4,7 +4,7 @@ This file provides guidance to AI coding assistants when working with code in th
 
 ## Project Overview
 
-Personal website hosted on GitHub Pages using Jekyll. Dark theme with subtle cyberpunk neon aesthetics and glassmorphism card effects. Features two open-source projects:
+Personal website hosted on Cloudflare Pages using Jekyll, with deployments orchestrated by GitHub Actions. Dark theme with subtle cyberpunk neon aesthetics and glassmorphism card effects. Features open-source projects such as:
 
 - **auto-builder**: Kotlin symbol processor that generates builder classes from annotated interfaces
 - **scrcpy-vscode**: VS Code extension for Android device mirroring
@@ -427,31 +427,33 @@ Automated build, test, and deployment via GitHub Actions (`.github/workflows/ci.
 
 ### Workflow Triggers
 
-- **Push to main**: Build → A11y tests → Deploy to GitHub Pages
+- **Push to main**: Build → A11y tests → Deploy to Cloudflare Pages
 - **Pull requests**: Build → A11y tests (no deployment)
 
 ### Pipeline Jobs
 
 1. **build-and-test**: Builds Jekyll site, runs Pa11y accessibility tests
-2. **deploy**: Deploys to GitHub Pages (only on push to main, after tests pass)
+2. **deploy**: Deploys `_site` to Cloudflare Pages via Wrangler (only on push to main, after tests pass)
 
 ### Environment
 
 - Ruby 3.3 (LTS)
 - Node.js 20 (LTS)
-- Uses GitHub Pages artifact deployment
+- Requires repository secrets: `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`
+- Uses `cloudflare/wrangler-action@v3` for deployment
 
 ### Failure Behavior
 
 - A11y test failures block deployment
 - PR checks must pass before merge
 
-## GitHub Pages Constraints
+## Hosting Constraints
 
 - Rouge is the only syntax highlighter
-- Safe mode is enforced
 - Use `github-pages` gem to match production environment
-- Deployment via GitHub Actions artifact (not branch-based)
+- Deploy static `_site` output to Cloudflare Pages project `izantech`
+- Cloudflare Pages production branch should be `main`
+- Custom domain mapping is managed in Cloudflare Pages (no `CNAME` file in repo)
 
 ## Templating
 
