@@ -4,7 +4,7 @@ This file provides guidance to AI coding assistants when working with code in th
 
 ## Project Overview
 
-Personal website hosted on Cloudflare Pages using Jekyll, with deployments orchestrated by GitHub Actions. Dark theme with subtle cyberpunk neon aesthetics and glassmorphism card effects. Features open-source projects such as:
+Personal website hosted on Cloudflare Pages using Jekyll with automatic Git integration. Dark theme with subtle cyberpunk neon aesthetics and glassmorphism card effects. Features open-source projects such as:
 
 - **auto-builder**: Kotlin symbol processor that generates builder classes from annotated interfaces
 - **scrcpy-vscode**: VS Code extension for Android device mirroring
@@ -423,37 +423,43 @@ After cloning, run `npm install` to set up hooks automatically (via `prepare` sc
 
 ## CI/CD Pipeline
 
-Automated build, test, and deployment via GitHub Actions (`.github/workflows/ci.yml`).
+Automated build, test, and deployment via Cloudflare Pages Git integration.
 
-### Workflow Triggers
+### Deployment Triggers
 
-- **Push to main**: Build → A11y tests → Deploy to Cloudflare Pages
-- **Pull requests**: Build → A11y tests (no deployment)
+- **Push to main**: Automatic build and deployment
+- **Pull requests**: Preview deployments with full test suite
 
-### Pipeline Jobs
+### Build Process
 
-1. **build-and-test**: Builds Jekyll site, runs Pa11y accessibility tests
-2. **deploy**: Deploys `_site` to Cloudflare Pages via Wrangler (only on push to main, after tests pass)
+Cloudflare Pages executes `build.sh` which runs:
+
+1. `npm ci` - Install Node dependencies
+2. `npm run lint` - ESLint + Stylelint
+3. `npm test` - Jest unit tests
+4. `bundle exec jekyll build` - Build Jekyll site
+5. `bundle exec jekyll serve --detach` - Start server for accessibility tests
+6. `npm run test:a11y` - Pa11y accessibility tests
 
 ### Environment
 
-- Ruby 3.3 (LTS)
-- Node.js 20 (LTS)
-- Requires repository secrets: `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`
-- Uses `cloudflare/wrangler-action@v3` for deployment
+- Ruby 3.4.4
+- Node.js 24.13.1 (Active LTS)
+- Jekyll 4.4.1
+- Environment variables configured in Cloudflare Pages dashboard
 
 ### Failure Behavior
 
-- A11y test failures block deployment
-- PR checks must pass before merge
+- Any test failure blocks deployment (exit code propagation via `&&` chaining)
+- Tests must pass for deployment to proceed
 
 ## Hosting Constraints
 
 - Rouge is the only syntax highlighter
-- Use `github-pages` gem to match production environment
-- Deploy static `_site` output to Cloudflare Pages project `izantech`
-- Cloudflare Pages production branch should be `main`
-- Custom domain mapping is managed in Cloudflare Pages (no `CNAME` file in repo)
+- Uses Jekyll 4.4.1 directly (no `github-pages` gem)
+- Deploy static `_site` output to Cloudflare Pages
+- Production branch: `main`
+- Custom domain mapping managed in Cloudflare Pages dashboard
 
 ## Templating
 
