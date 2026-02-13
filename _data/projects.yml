@@ -1,0 +1,65 @@
+projects:
+  - id: auto-builder
+    name: auto-builder
+    url: https://github.com/izantech/auto-builder
+    icon: kotlin
+    i18n:
+      tooltip_key: tooltip_project_autobuilder
+      description_key: project_autobuilder_desc
+    tags:
+      - name: Kotlin
+      - name: KSP
+      - name: Code Generation
+    order: 1
+
+  - id: scrcpy-vscode
+    name: scrcpy-vscode
+    url: https://github.com/izantech/scrcpy-vscode
+    icon: typescript
+    i18n:
+      tooltip_key: tooltip_project_scrcpy
+      description_key: project_scrcpy_desc
+    tags:
+      - name: TypeScript
+      - name: VS Code
+      - name: Android
+    order: 2
+
+  - id: revenuecat-cli
+    name: revenuecat-cli
+    url: https://github.com/izantech/revenuecat-cli
+    icon: typescript
+    i18n:
+      tooltip_key: tooltip_project_revenuecat
+      description_key: project_revenuecat_desc
+    tags:
+      - name: TypeScript
+      - name: CLI
+      - name: RevenueCat
+    order: 3
+
+  - id: yup
+    name: yup
+    url: https://github.com/izantech/yup
+    icon: rust
+    i18n:
+      tooltip_key: tooltip_project_yup
+      description_key: project_yup_desc
+    tags:
+      - name: Rust
+      - name: CLI
+      - name: Package Manager
+    order: 4
+
+  - id: lineup
+    name: lineup
+    url: https://lineup.izantech.app/
+    icon: claude-code
+    i18n:
+      tooltip_key: tooltip_project_lineup
+      description_key: project_lineup_desc
+    tags:
+      - name: Claude Code
+      - name: Dev Tools
+      - name: Agentic Workflow
+    order: 5
