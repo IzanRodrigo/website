@@ -76,9 +76,9 @@ title: Home
         </h3>
         {% include icons/{{ project.icon }}.svg %}
       </div>
-      <p data-i18n="{{ project.i18n.description_key }}">
-        {{ site.data.i18n.en[project.i18n.description_key] }}
-      </p>
+      <div data-i18n="{{ project.i18n.description_key }}">
+        {{ site.data.i18n.en[project.i18n.description_key] | markdownify }}
+      </div>
       <div class="project-tags">
         {% for tag in project.tags %}
         <span class="tag">{{ tag.name }}</span>
